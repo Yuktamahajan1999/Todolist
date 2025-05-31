@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import TodoItem from "./TodoItem";
+import ToDoItem from "./TodoItem";
 import InputArea from "./InputArea";
 import './App.css';
 import { toast } from "react-toastify";
