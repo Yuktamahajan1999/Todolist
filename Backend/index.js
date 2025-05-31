@@ -9,7 +9,7 @@ import userRouter from "./Router/userRouter.js";
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ["http://localhost:3000", "https://your-frontend.vercel.app"],
+  origin: ["http://localhost:8000", "https://your-frontend.vercel.app"],
   credentials: true,
   allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"]
 }));
