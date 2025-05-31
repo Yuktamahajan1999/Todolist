@@ -16,7 +16,7 @@ function Register() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:8000/user/register", formData);
+            const response = await axios.post("http://localhost:3000/user/register", formData);
             toast.success(response.data.msg || "Registration successful!", {
                 position: "top-center",
                 autoClose: 2000,
