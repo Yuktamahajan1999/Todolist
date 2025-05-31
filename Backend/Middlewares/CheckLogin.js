@@ -16,7 +16,7 @@ let checkLogin = (req, res, next) => {
     }
 
     try {
-        let decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+        let decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);;
         console.log("Decoded JWT:", decoded);
         req.user = { id: decoded.id };
         next();

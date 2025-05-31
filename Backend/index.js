@@ -9,10 +9,11 @@ import userRouter from "./Router/userRouter.js";
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: "https://todolist-lriy.vercel.app",
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type,Authorization"
+  origin: ["http://localhost:5173", "https://todolist-lriy.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 app.use("/todo", todoRouter);
 app.use("/user", userRouter);
