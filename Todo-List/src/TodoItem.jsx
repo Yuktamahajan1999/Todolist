@@ -2,7 +2,7 @@ import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 
-function ToDoItem({ id, text, onDelete, onEdit }) {
+function TodoItem({ id, text, onDelete, onEdit }) {
   return (
     <li className="todo-item">
       <span className="todo-text">{text}</span>
@@ -18,4 +18,4 @@ function ToDoItem({ id, text, onDelete, onEdit }) {
   );
 }
 
-export default ToDoItem;
+export default TodoItem;
