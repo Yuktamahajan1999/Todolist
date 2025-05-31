@@ -2,15 +2,15 @@ import express from "express";
 import { getAllTodos, addTodo, deleteTodo, updateTodo, getUserTodos } from "../Controllers/todoController.js";
 import checkLogin from "../Middlewares/CheckLogin.js";
 
-let todorouter = express.Router();
+let todoRouter = express.Router();
 
-todorouter.get("/getAlltodos", checkLogin, getAllTodos);
-todorouter.get("/mytodos", checkLogin, getUserTodos);
+todoRouter.get("/getAlltodos", checkLogin, getAllTodos);
+todoRouter.get("/mytodos", checkLogin, getUserTodos);
 
-todorouter.post("/addtodo", checkLogin, addTodo);
+todoRouter.post("/addtodo", checkLogin, addTodo);
 
-todorouter.put('/updatetodo', checkLogin, updateTodo);
-todorouter.delete('/deletetodo', checkLogin, deleteTodo);
+todoRouter.put('/updatetodo', checkLogin, updateTodo);
+todoRouter.delete('/deletetodo', checkLogin, deleteTodo);
 
-export default todorouter;
+export default todoRouter;
 

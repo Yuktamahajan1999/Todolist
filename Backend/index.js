@@ -3,14 +3,18 @@ dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import todorouter from './Router/todoRouter.js';
+import todoRouter from './Router/todoRouter.js';
 import userRouter from "./Router/userRouter.js"; 
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://your-frontend.vercel.app"],
+  credentials: true,
+  allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"]
+}));
 
-app.use("/todo", todorouter);
+app.use("/todo", todoRouter);
 app.use("/user", userRouter);
 
 mongoose.connect(process.env.MONGODB_URI)
