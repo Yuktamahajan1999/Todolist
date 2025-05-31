@@ -22,7 +22,7 @@ function TodoTask() {
       return;
     }
 
-    axios.get("http://localhost:3000/todo/mytodos", { headers: header })
+    axios.get("http://localhost:8000/todo/mytodos", { headers: header })
       .then((res) => {
         setTodos(res.data.data);
         setLoading(false);
