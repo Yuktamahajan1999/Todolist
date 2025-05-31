@@ -2,22 +2,15 @@ import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 
-function TodoItem({ id, title, description, onDelete, onEdit }) {
+function ToDoItem({ id, text, onDelete, onEdit }) {
   return (
     <li className="todo-item">
-      <span className="todo-title">{title}</span>
-      {description && description.length > 0 && (
-        <ul className="todo-description">
-          {description.map((desc, idx) => (
-            <li key={idx}>{desc}</li>
-          ))}
-        </ul>
-      )}
+      <span className="todo-text">{text}</span>
       <div className="button-group">
         <button onClick={() => onDelete(id)}>
           <DeleteIcon />
         </button>
-        <button onClick={() => onEdit(id, title, description)}>
+        <button onClick={() => onEdit(id, text)}>
           <EditIcon />
         </button>
       </div>
@@ -25,4 +18,4 @@ function TodoItem({ id, title, description, onDelete, onEdit }) {
   );
 }
 
-export default TodoItem;
+export default ToDoItem;
