@@ -19,7 +19,7 @@ function TodoList() {
       return;
     }
 
-    axios.get("http://localhost:3000/todo/mytodos", {
+    axios.get("https://todolist-89fe.onrender.com/todo/mytodos", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => {
@@ -48,7 +48,7 @@ function TodoList() {
     console.log("Adding todo:", { title, description: descriptionArray });
     try {
       const res = await axios.post(
-        "http://localhost:3000/todo/addtodo",
+        "https://todolist-89fe.onrender.com/todo/addtodo",
         { title, description: descriptionArray, status: false },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -75,7 +75,7 @@ function TodoList() {
 
     console.log("Deleting todo with id:", id);
     try {
-      await axios.delete(`http://localhost:3000/todo/deletetodo?id=${id}`, {
+      await axios.delete(`https://todolist-89fe.onrender.com/todo/deletetodo?id=${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setItems((prevItems) => {
@@ -109,10 +109,9 @@ function TodoList() {
       return;
     }
 
-    console.log("Updating todo:", { id: currentItem.id, title, description: descriptionArray });
     try {
       await axios.put(
-        `http://localhost:3000/todo/updatetodo?id=${currentItem.id}`,
+        `https://todolist-89fe.onrender.com/todo/updatetodo?id=${currentItem.id}`,
         { title, description: descriptionArray },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -135,7 +134,6 @@ function TodoList() {
   }
 
   useEffect(() => {
-    console.log("Current items state:", items);
   }, [items]);
 
   return (

@@ -7,7 +7,7 @@ const ToDoHub = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    axios.get("http://localhost:3000/todo/getAlltodos", {
+    axios.get("https://todolist-89fe.onrender.com/todo/getAlltodos", {
       headers: { Authorization: "Bearer " + token }
     })
       .then(res => {
