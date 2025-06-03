@@ -3,11 +3,12 @@ import axios from 'axios';
 
 const ToDoHub = () => {
   const [todos, setTodos] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL || "https://todolist-89fe.onrender.com";
 
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    axios.get("https://todolist-89fe.onrender.com/todo/getAlltodos", {
+    axios.get(`${API_URL}/todo/getAlltodos`, {
       headers: { Authorization: "Bearer " + token }
     })
       .then(res => {
@@ -16,7 +17,7 @@ const ToDoHub = () => {
         }
       })
       .catch(err => console.error("Error fetching todos:", err));
-  }, []);
+  }, [API_URL]);
 
   return (
     <div className="todo-hub-container">

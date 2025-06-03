@@ -8,9 +8,7 @@ function TodoTask() {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem("token");
-  const header = {
-    Authorization: "Bearer " + token,
-  };
+  const API_URL = import.meta.env.VITE_API_URL || "https://todolist-89fe.onrender.com";
   if (!token) {
     navigate("/login");
   }
@@ -22,7 +20,9 @@ function TodoTask() {
       return;
     }
 
-    axios.get("https://todolist-89fe.onrender.com/todo/mytodos", { headers: header })
+    axios.get(`${API_URL}/todo/mytodos`, {
+      headers: { Authorization: "Bearer " + token }
+    })
       .then((res) => {
         setTodos(res.data.data);
         setLoading(false);
@@ -31,7 +31,7 @@ function TodoTask() {
         console.error("Error fetching user todos:", err);
         setLoading(false);
       });
-  }, []);
+  }, [API_URL]);
 
 
   return (

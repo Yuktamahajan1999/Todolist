@@ -9,11 +9,12 @@ function Login() {
   const [password, setPassword] = useState('');
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL || "https://todolist-89fe.onrender.com";
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/user/login', {
+      const res = await axios.post('https://todolist-89fe.onrender.com/user/login', {
         email,
         password,
       });
@@ -41,14 +42,14 @@ function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-        /><br/>
+        /><br />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-        /><br/>
+        /><br />
         <button type="submit">Login</button>
       </form>
     </div>

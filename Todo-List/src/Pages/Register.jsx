@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Register() {
     const [formData, setFormData] = useState({ name: "", email: "", password: "" });
     const navigate = useNavigate();
+    const API_URL = import.meta.env.VITE_API_URL || "https://todolist-89fe.onrender.com";
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,7 +17,7 @@ function Register() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:3000/user/register", formData);
+            const response = await axios.post(`${API_URL}/user/register`, formData);
             toast.success(response.data.msg || "Registration successful!", {
                 position: "top-center",
                 autoClose: 2000,
@@ -28,7 +29,7 @@ function Register() {
             toast.error(errorMsg, {
                 position: "top-center",
                 autoClose: 2000,
-                style: { marginBottom: "150px"},
+                style: { marginBottom: "150px" },
             });
         }
     };
