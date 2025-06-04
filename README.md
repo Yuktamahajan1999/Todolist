@@ -6,7 +6,7 @@ A full-stack To-Do application built using the **MERN stack** (MongoDB, Express.
 
 ## 🚀 Live Demo
 
-🌐 [Live Demo on Render](https://todolist-lriy.vercel.app/) 
+🌐 [Live Demo](https://todolist-lriy.vercel.app/) 
 
 ---
 
