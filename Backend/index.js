@@ -8,12 +8,19 @@ import userRouter from "./Router/userRouter.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: ["http://localhost:5173", "https://todolist-lriy.vercel.app", "https://todolist-lriy-git-main-yukta-mahajans-projects.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://todolist-lriy.vercel.app",
+  "https://todolist-lriy-git-main-yukta-mahajans-projects.vercel.app"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
 
 app.use("/todo", todoRouter);
 app.use("/user", userRouter);
