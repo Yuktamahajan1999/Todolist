@@ -27,7 +27,7 @@ function InputArea({ onUpdate, isEditing, currentItem, onAdd }) {
     if (isEditing) {
       onUpdate(title, descArray);
     } else {
-      onAdd(title, descArray);
+      onAdd({ title, description: descArray });
     }
     setTitle("");
     setDescription("");

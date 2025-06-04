@@ -27,12 +27,14 @@ body {
   box-sizing: border-box;
   margin-top: -15%;
 }
+
 .heading {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
 }
+
 .heading h1 {
   transform: rotate(2deg);
   padding: 0.2rem 1.2rem;
@@ -62,7 +64,7 @@ body {
 
 .icon-wrapper:hover {
   transform: scale(1.1);
-   background-color: beige;
+  background-color: beige;
 }
 
 button {
@@ -73,6 +75,7 @@ button {
   padding-bottom: 3px;
   border-radius: 5px;
 }
+
 button span {
   background: #f1f5f8;
   display: block;
@@ -86,8 +89,15 @@ li {
   position: relative;
   padding: 0.5rem;
 }
+
 .todo-item {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.todo-item-list {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -115,19 +125,19 @@ li {
 
 .button-group button:hover {
   background-color: #0056b3;
-}  
+}
 
 .navbar {
   width: 100%;
   position: sticky;
   top: 0;
   padding: 1rem 2rem;
-  margin-bottom: 2rem; 
-  background: linear-gradient(to right, #4a4a4a, #656464); 
-  color: #ffffff; 
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #4a4a4a, #656464);
+  color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   z-index: 1000;
-  border-bottom: 3px solid #fdcb6e; 
+  border-bottom: 3px solid #fdcb6e;
   transition: all 0.3s ease-in-out;
 }
 
@@ -153,16 +163,16 @@ li {
 }
 
 .nav-links a {
-  color: #ffeaa7; 
-  text-decoration: none; 
+  color: #ffeaa7;
+  text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: #fdcb6e; 
-  transform: scale(1.1); 
+  color: #fdcb6e;
+  transform: scale(1.1);
 }
 
 .nav-links a::after {
@@ -172,7 +182,7 @@ li {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #fdcb6e; 
+  background-color: #fdcb6e;
   transition: width 0.3s ease;
 }
 
@@ -215,14 +225,14 @@ li {
 .welcome-text {
   font-size: 1.8rem;
   text-align: center;
-  color: #2e7d32; 
-  font-weight: 600; 
+  color: #2e7d32;
+  font-weight: 600;
   margin: 20px 0;
   padding: 12px 24px;
   animation: fadeIn 1s ease-in-out;
   letter-spacing: 0.5px;
   line-height: 1.4;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   display: inline-block;
 }
@@ -335,7 +345,7 @@ li {
   background-color: #1e3a8a;
 }
 
-/* Todo Hub section My all todos to be displayed there */
+/* Todo Hub section */
 .todo-hub-container {
   max-width: 1200px;
   margin: auto;
@@ -381,6 +391,7 @@ li {
   padding-left: 1rem;
   white-space: pre-wrap;
 }
+
 .todo-description li {
   margin-bottom: 4px;
 }

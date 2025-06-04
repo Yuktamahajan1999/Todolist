@@ -47,7 +47,7 @@ function TodoList() {
   }, [API_URL]);
 
   // Add new todo
-  async function addItem(title, descriptionArray) {
+  async function addItem({ title, description: descriptionArray, status= "pending"}) {
     const token = localStorage.getItem("token");
     if (!token) {
       toast.error("Please login to add tasks.");
@@ -62,7 +62,7 @@ function TodoList() {
     try {
       const res = await axios.post(
         `${API_URL}/todo/addtodo`,
-        { title, description: descriptionArray, status: false },
+        { title, description: descriptionArray, status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setItems((prevItems) => [...prevItems, res.data.data]);

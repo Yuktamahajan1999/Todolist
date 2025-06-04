@@ -14,7 +14,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://todolist-89fe.onrender.com/user/login', {
+      const res = await axios.post(`${API_URL}/user/login`, {
         email,
         password,
       });
@@ -23,7 +23,7 @@ function Login() {
 
       setUser(res.data.user);
 
-      toast.success('Login successful!', { autoClose: 1000 });
+      toast.success('Login successful!', { position:"top-center",autoClose: 1000 });
 
       navigate('/');
     } catch (err) {

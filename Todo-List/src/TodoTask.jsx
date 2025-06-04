@@ -44,7 +44,7 @@ function TodoTask() {
       ) : (
         <ul className="todo-list">
           {todos.map((todo) => (
-            <li key={todo._id} className="todo-item">
+            <li key={todo._id} className="todo-item-list">
               <span className="todo-title">{todo.title}</span>
               {Array.isArray(todo.description) && (
                 <ul>
