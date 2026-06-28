@@ -6,7 +6,7 @@ A full-stack **To-Do Management Application** built using the **MERN Stack** (Mo
 
 ## 🚀 Live Demo
 
-🌐 **Live Application:** todolist-lriy.vercel.app
+🌐 **Live Application:** [todolist-lriy.vercel.app](https://todolist-lriy.vercel.app/)
 
 ---
 
