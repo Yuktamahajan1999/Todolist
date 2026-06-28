@@ -36,13 +36,45 @@ function Register() {
 
     return (
         <div className="auth-container">
-            <h2>Register</h2>
+            <div className="login-header">
+                <h2>Create Your Account 🚀</h2>
+                <p>Start managing your tasks with TaskFlow.</p>
+            </div>
             <form className="auth-form" onSubmit={handleSubmit}>
-                <input type="text" name="name" placeholder="Name" required onChange={handleChange} />
-                <input type="email" name="email" placeholder="Email" required onChange={handleChange} />
-                <input type="password" name="password" placeholder="Password" required onChange={handleChange} />
-                <button type="submit">Register</button>
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                    onChange={handleChange}
+                />
+
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    onChange={handleChange}
+                />
+
+                <label>Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                    onChange={handleChange}
+                />
+                <button type="submit">Create Account</button>
             </form>
+            <div className="auth-footer">
+                Already have an account?
+                <span onClick={() => navigate("/login")}>
+                    Sign In
+                </span>
+            </div>
         </div>
     );
 }
